@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Movie API - Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Resources
 
-## Available Scripts
+- App Base Url
+    - https://movieapp-api-lms1.onrender.com
 
-In the project directory, you can run:
+- Admin User
+    - email: "admin@mail.com"
+    - password: "admin123"
 
-### `npm start`
+## References
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Endpoints
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Users
 
-### `npm test`
+#### [POST] - "/users/login"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Sample Request Body
 
-### `npm run build`
+    ```json
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    {
+        "email": "sample@mail.com",
+        "password": "samplePw123"
+    }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### [POST] - "/users/register"
 
-### `npm run eject`
+- Sample Request Body
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```json
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    {
+        "email": "sample@mail.com",
+        "password": "samplePw123"
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```
+      
+### Movies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### [POST] - "/movies/addMovie"
 
-## Learn More
+- Sample Request Body
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```json
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    {
+        "title": "Sample: The Movie",
+        "director": "Sample L. Jackson",
+        "year": 2024,
+        "description": "sample description",
+        "genre": "sample"
+    }
 
-### Code Splitting
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### [GET] - "/movies/getMovies"
 
-### Analyzing the Bundle Size
+- No Request Body
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### [GET] - "/movies/getMovie/:id"
 
-### Making a Progressive Web App
+- No Request Body
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### [PATCH] - "/movies/updateMovie/:id"
 
-### Advanced Configuration
+- Sample Request Body
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```json
 
-### Deployment
+    {
+        "title": "Sample 2: The Update",
+        "director": "Sample L. Jackson",
+        "year": 2026,
+        "description": "sample updated description",
+        "genre": "sample"
+    }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```
 
-### `npm run build` fails to minify
+#### [DELETE] - "/movies/deleteMovie/:id"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- No Request Body
+
+#### [POST] - "/movies/addComment/:id"
+
+- Sample Request Body
+
+    ```json
+
+    {
+        "comment": "Sample 2: The Reckoning is the best sample update of all time.",
+    }
+
+    ```
+#### [GET] - "/movies/getComments/:id"
+
+- No Request Body
