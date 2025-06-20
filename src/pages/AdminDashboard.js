@@ -19,7 +19,7 @@ export default function AdminDashboard({ movies }) {
 
   return(
     <>
-      <h1>Admin Dashboard</h1>
+      <h1 className="text-center">Admin Dashboard</h1>
       <Table striped bordered hover responsive className="align-middle">
         <thead>
           <tr className="text-center">
